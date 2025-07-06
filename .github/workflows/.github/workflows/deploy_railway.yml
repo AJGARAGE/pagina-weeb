@@ -24,3 +24,7 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           railway up --detach
+git add .github/workflows/deploy_railway.yml
+git commit -m "Add Railway deploy workflow"
+git push origin main
+
