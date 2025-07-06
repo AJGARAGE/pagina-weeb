@@ -5,7 +5,11 @@ const kitSchema = new mongoose.Schema({
   modelo: String,
   ano: Number,
   elementos: [String],
-  nivel: { type: String, enum: ['Básico','Intermedio','Completo'] }
+  nivel: {
+    type: String,
+    enum: ['Básico', 'Intermedio', 'Completo', 'Frenos']
+  },
+  linkCompra: String
 });
 
 export default mongoose.model('Kit', kitSchema);
