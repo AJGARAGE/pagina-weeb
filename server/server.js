@@ -18,9 +18,10 @@ app.get('/api/kits', async (req, res) => { res.json(await Kit.find({})); });
 
 // Serve React build in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../cliente/build')));
+  // Serve the React app from the correct build directory
+  app.use(express.static(path.join(__dirname, '../client/build')));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../cliente/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }
 
